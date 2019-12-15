@@ -70,15 +70,14 @@ install(TARGETS libudfread EXPORT libudfread
   RUNTIME DESTINATION bin
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
-  INCLUDES DESTINATION include/libudfread
 )
 
 
-# install(FILES
-#   ${CMAKE_CURRENT_SOURCE_DIR}/src/udfread-version.h
-#   ${CMAKE_CURRENT_SOURCE_DIR}/src/udfread.h
-#   DESTINATION include/libudfread
-# )
+install(FILES
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/udfread-version.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/udfread.h
+  DESTINATION include/libudfread
+)
 
 install(EXPORT libudfread
   FILE
