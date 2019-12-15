@@ -76,6 +76,9 @@ install(TARGETS libudfread EXPORT libudfread
 install(FILES
   ${CMAKE_CURRENT_SOURCE_DIR}/src/udfread-version.h
   ${CMAKE_CURRENT_SOURCE_DIR}/src/udfread.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/blockinput.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/default_blockinput.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/ecma167.h
   DESTINATION include/libudfread
 )
 
