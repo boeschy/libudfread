@@ -53,6 +53,7 @@
 # undef  off_t
 # define off_t off64_t
 #endif
+typedef signed long int ssize_t;
 
 #ifdef _WIN32
 static ssize_t pread(int fd, void *buf, size_t count, off_t offset)
@@ -113,7 +114,7 @@ static int _def_close(udfread_block_input *p_gen)
 
     if (p) {
         if (p->fd >= 0) {
-            result = close(p->fd);
+            result = _close(p->fd);
         }
         free(p);
     }
@@ -172,7 +173,7 @@ udfread_block_input *block_input_new(const char *path)
     }
 
 #ifdef _WIN32
-    p->fd = open(path, O_RDONLY | O_BINARY);
+    p->fd = _open(path, O_RDONLY | O_BINARY);
 #else
     p->fd = open(path, O_RDONLY);
 #endif

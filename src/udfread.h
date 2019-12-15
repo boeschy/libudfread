@@ -43,6 +43,7 @@ extern "C" {
 typedef struct udfread udfread;
 
 struct udfread_block_input;
+typedef signed long int ssize_t;
 
 /**
  *  Initialize UDF reader
