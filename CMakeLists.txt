@@ -20,7 +20,7 @@ add_library(libudfread STATIC
 
 set_target_properties(libudfread
   PROPERTIES
-    PDB_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMPILE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
     PDB_NAME libudfread
     PDB_NAME_DEBUG libudfreadd
 )
