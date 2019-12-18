@@ -23,6 +23,8 @@ set_target_properties(libudfread
     COMPILE_PDB_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}
     PDB_NAME libudfread
     PDB_NAME_DEBUG libudfreadd
+    COMPILE_PDB_NAME libudfread
+    COMPILE_PDB_NAME_DEBUG libudfreadd
 )
 
 target_compile_definitions(libudfread
@@ -32,7 +34,7 @@ target_compile_definitions(libudfread
 )
 target_link_options(libudfread
   PRIVATE
-    /INCREMENTAL-
+    /INCREMENTAL:NO
     /debug:full
 )
 if(WINDOWS_STORE)
