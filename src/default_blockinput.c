@@ -53,7 +53,13 @@
 # undef  off_t
 # define off_t off64_t
 #endif
-typedef signed long int ssize_t;
+
+#include <stdint.h>
+#if !defined(_SSIZE_T_DEFINED) && !defined(HAVE_SSIZE_T)
+typedef intptr_t      ssize_t;
+#define _SSIZE_T_DEFINED
+#endif
+
 
 #ifdef _WIN32
 static ssize_t pread(int fd, void *buf, size_t count, off_t offset)
