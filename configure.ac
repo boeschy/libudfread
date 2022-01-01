@@ -1,7 +1,7 @@
 dnl library version number
 m4_define([udfread_major], 1)
 m4_define([udfread_minor], 1)
-m4_define([udfread_micro], 0)
+m4_define([udfread_micro], 2)
 m4_define([udfread_version],[udfread_major.udfread_minor.udfread_micro])
 
 dnl shared library version (.so version)
@@ -56,7 +56,6 @@ AC_ARG_ENABLE([extra-warnings],
 dnl required programs
 AC_PROG_CC
 AM_PROG_CC_C_O
-AC_PROG_LIBTOOL
 
 LT_INIT
 
@@ -103,5 +102,5 @@ UDFREAD_LTVERSION="lt_current():lt_revision():lt_age()"
 AC_SUBST(UDFREAD_LTVERSION)
 
 dnl generate output files
-AC_CONFIG_FILES([Makefile src/udfread.pc src/udfread-version.h])
+AC_CONFIG_FILES([Makefile src/libudfread.pc src/udfread-version.h])
 AC_OUTPUT
