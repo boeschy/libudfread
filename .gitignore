@@ -23,10 +23,10 @@
 /m4/lt~obsolete.m4
 /Makefile
 /Makefile.in
-/src/udfread-version.h
 /stamp-h1
 .dirstamp
 .deps
 .libs
 udfcat
 udfls
+build*/

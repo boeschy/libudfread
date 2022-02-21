@@ -52,6 +52,10 @@ extern "C" {
 typedef struct udfread udfread;
 
 struct udfread_block_input;
+#if !defined(_SSIZE_T_DEFINED) && !defined(HAVE_SSIZE_T)
+typedef intptr_t      ssize_t;
+#define _SSIZE_T_DEFINED
+#endif
 
 /**
  *  Initialize UDF reader

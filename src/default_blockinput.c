@@ -54,6 +54,13 @@
 # define off_t off64_t
 #endif
 
+#include <stdint.h>
+#if !defined(_SSIZE_T_DEFINED) && !defined(HAVE_SSIZE_T)
+typedef intptr_t      ssize_t;
+#define _SSIZE_T_DEFINED
+#endif
+
+
 #ifdef _WIN32
 static ssize_t pread(int fd, void *buf, size_t count, off_t offset)
 {
@@ -113,7 +120,7 @@ static int _def_close(udfread_block_input *p_gen)
 
     if (p) {
         if (p->fd >= 0) {
-            result = close(p->fd);
+            result = _close(p->fd);
         }
         free(p);
     }
